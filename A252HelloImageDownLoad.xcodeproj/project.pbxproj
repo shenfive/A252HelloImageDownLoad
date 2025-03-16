@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F8F9BE852D869AAE00686662 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F8F9BE842D869AAE00686662 /* Kingfisher */; };
+		F8F9BE882D869CD200686662 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F8F9BE872D869CD200686662 /* SDWebImage */; };
+		F8F9BE8A2D869CD200686662 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F8F9BE892D869CD200686662 /* SDWebImageMapKit */; };
+		F8F9BE8D2D869E5100686662 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F8F9BE8C2D869E5100686662 /* SwiftyJSON */; };
+		F8F9BE902D869EB400686662 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F8F9BE8F2D869EB400686662 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F877B7B92D8664A8003583A4 /* A252HelloImageDownLoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A252HelloImageDownLoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +44,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F9BE902D869EB400686662 /* Alamofire in Frameworks */,
+				F8F9BE882D869CD200686662 /* SDWebImage in Frameworks */,
+				F8F9BE8A2D869CD200686662 /* SDWebImageMapKit in Frameworks */,
+				F8F9BE8D2D869E5100686662 /* SwiftyJSON in Frameworks */,
+				F8F9BE852D869AAE00686662 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +91,11 @@
 			);
 			name = A252HelloImageDownLoad;
 			packageProductDependencies = (
+				F8F9BE842D869AAE00686662 /* Kingfisher */,
+				F8F9BE872D869CD200686662 /* SDWebImage */,
+				F8F9BE892D869CD200686662 /* SDWebImageMapKit */,
+				F8F9BE8C2D869E5100686662 /* SwiftyJSON */,
+				F8F9BE8F2D869EB400686662 /* Alamofire */,
 			);
 			productName = A252HelloImageDownLoad;
 			productReference = F877B7B92D8664A8003583A4 /* A252HelloImageDownLoad.app */;
@@ -107,6 +125,12 @@
 			);
 			mainGroup = F877B7B02D8664A8003583A4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F8F9BE832D869AAE00686662 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F8F9BE862D869CD200686662 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				F8F9BE8B2D869E5100686662 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F8F9BE8E2D869EB400686662 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F877B7BA2D8664A8003583A4 /* Products */;
 			projectDirPath = "";
@@ -335,6 +359,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8F9BE832D869AAE00686662 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.1;
+			};
+		};
+		F8F9BE862D869CD200686662 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+		F8F9BE8B2D869E5100686662 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		F8F9BE8E2D869EB400686662 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8F9BE842D869AAE00686662 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8F9BE832D869AAE00686662 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		F8F9BE872D869CD200686662 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8F9BE862D869CD200686662 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		F8F9BE892D869CD200686662 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8F9BE862D869CD200686662 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		F8F9BE8C2D869E5100686662 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8F9BE8B2D869E5100686662 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		F8F9BE8F2D869EB400686662 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8F9BE8E2D869EB400686662 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F877B7B12D8664A8003583A4 /* Project object */;
 }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+//import Kingfisher
+import SDWebImage
 
 class ViewController: UIViewController {
     @IBOutlet weak var theImageView: UIImageView!
@@ -13,22 +15,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var theImageContaner: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = URL(string: "https://cdn2.ettoday.net/images/5840/d5840071.jpg"){
-            print("start:\(Date().timeIntervalSince1970)")
-
-            
-            DispatchQueue.global().async {
-                do{
-                    let imageData = try Data(contentsOf: url)
-                    DispatchQueue.main.async {
-                        self.theImageView.image = UIImage(data: imageData)
-                        print("downloaded:\(Date().timeIntervalSince1970)")
-                    }
-                }catch{
-                    print(error.localizedDescription)
-                }
+//        if let url = URL(string: "https://cdn.hk01.com/di/media/images/dw/20200812/370289758980673536.jpeg/n9DPEMxK9oiurOikNCKS0vCbRRiCES0RUTjuFlE47hY?v=w640"){
+//            print("start:\(Date().timeIntervalSince1970)")
+//            DispatchQueue.global().async {
+//                self.theImageView.sd_setImage(with: url)
+//                //            theImageView.kf.setImage(with: url)
+//                print("downloaded:\(Date().timeIntervalSince1970)")
+//            }
+//            DispatchQueue.global().async {
+//                do{
+//                    let imageData = try Data(contentsOf: url)
+//                    print(String(data: imageData, encoding: .utf8))
+////                    DispatchQueue.main.async {
+////                        self.theImageView.image = UIImage(data: imageData)
+////                        print("downloaded:\(Date().timeIntervalSince1970)")
+////                    }
+//                }catch{
+//                    print(error.localizedDescription)
+//                }
+//            }
+//            print("end:\(Date().timeIntervalSince1970)")
+//        }
+        
+        
+        
+        APIModel.share.queryUser { data, error in
+            if let error{
+                print(error.localizedDescription)
+                return
             }
-            print("end:\(Date().timeIntervalSince1970)")
+            print(data as? Data)
+            
+            
         }
         
     }
