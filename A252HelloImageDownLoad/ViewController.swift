@@ -8,6 +8,7 @@
 import UIKit
 //import Kingfisher
 import SDWebImage
+import SwiftyJSON
 
 class ViewController: UIViewController {
     @IBOutlet weak var theImageView: UIImageView!
@@ -45,6 +46,12 @@ class ViewController: UIViewController {
                 return
             }
             print(data as? Data)
+            if let jsonData = data as? Data{
+                let json = JSON(jsonData)
+                print(json["results"][0]["picture"]["large"].stringValue)
+                self.theImageView
+                    .sd_setImage(with:URL(string: json["results"][0]["picture"]["large"].stringValue))
+            }
             
             
         }
