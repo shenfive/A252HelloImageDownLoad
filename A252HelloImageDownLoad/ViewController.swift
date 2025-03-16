@@ -13,6 +13,7 @@ import SwiftyJSON
 class ViewController: UIViewController {
     @IBOutlet weak var theImageView: UIImageView!
     
+    @IBOutlet weak var theIndicator: UIActivityIndicatorView!
     @IBOutlet weak var theImageContaner: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -42,7 +43,18 @@ class ViewController: UIViewController {
         
         
         
+        newUser()
+        
+    }
+
+    @IBAction func nextPerson(_ sender: Any) {
+        newUser()
+    }
+    
+    func newUser(){
+        self.theIndicator.startAnimating()
         APIModel.share.queryUser { data, error in
+            self.theIndicator.stopAnimating()
             if let error{
                 print(error.localizedDescription)
                 return
@@ -58,9 +70,9 @@ class ViewController: UIViewController {
                 json["results"][0]["name"]["first"].stringValue + " " + json["results"][0]["name"]["last"].stringValue
             }
         }
-        
     }
-
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         theImageView.clipsToBounds = true
@@ -76,6 +88,8 @@ class ViewController: UIViewController {
         theImageContaner.layer.shadowOffset = CGSize(width: 10, height: 10)
 
     }
+    
+
 
 }
 

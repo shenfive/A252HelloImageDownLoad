@@ -46,6 +46,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qko-nI-cHi">
+                                <rect key="frame" x="150.66666666666666" y="683" width="91.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="下面一位"/>
+                                <connections>
+                                    <action selector="nextPerson:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2xH-jP-GdD"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="mu3-2w-I2s">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.4307863404150723" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pau-nq-RAJ">
                                 <rect key="frame" x="161" y="452.66666666666669" width="71" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -57,16 +69,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="v3x-Un-6yb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="0Pv-2I-8TQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mu3-2w-I2s" secondAttribute="trailing" id="6jV-7a-2Tp"/>
                             <constraint firstItem="86p-at-KQb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6uy-IG-CXW"/>
+                            <constraint firstItem="mu3-2w-I2s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7L9-cd-8Ps"/>
                             <constraint firstItem="86p-at-KQb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bhu-Pr-fUU"/>
                             <constraint firstItem="Pau-nq-RAJ" firstAttribute="centerX" secondItem="8c0-pp-E3J" secondAttribute="centerX" id="ChU-bw-d7z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v3x-Un-6yb" secondAttribute="trailing" constant="100" id="HNq-vb-D2C"/>
+                            <constraint firstItem="mu3-2w-I2s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ipc-vh-lhk"/>
+                            <constraint firstItem="Qko-nI-cHi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QbT-wR-vGV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mu3-2w-I2s" secondAttribute="bottom" id="ZDK-xn-KTU"/>
                             <constraint firstItem="v3x-Un-6yb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="gcd-3s-TDn"/>
                             <constraint firstItem="868-C8-l6j" firstAttribute="centerX" secondItem="8c0-pp-E3J" secondAttribute="centerX" id="m9K-HV-bJT"/>
                             <constraint firstItem="Pau-nq-RAJ" firstAttribute="top" secondItem="v3x-Un-6yb" secondAttribute="bottom" constant="30" id="mae-Jv-iOb"/>
                             <constraint firstItem="86p-at-KQb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="npT-XV-lWh"/>
                             <constraint firstItem="868-C8-l6j" firstAttribute="top" secondItem="Pau-nq-RAJ" secondAttribute="bottom" constant="20" id="vWi-oG-TiI"/>
                             <constraint firstItem="v3x-Un-6yb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vZD-s6-29u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qko-nI-cHi" secondAttribute="bottom" constant="100" id="xw8-j6-4wc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -74,6 +92,7 @@
                         <outlet property="nameLabel" destination="Pau-nq-RAJ" id="egc-E4-iAX"/>
                         <outlet property="theImageContaner" destination="v3x-Un-6yb" id="Iu3-f7-T6b"/>
                         <outlet property="theImageView" destination="8c0-pp-E3J" id="iIj-xr-zFd"/>
+                        <outlet property="theIndicator" destination="mu3-2w-I2s" id="1QQ-L0-hHh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
