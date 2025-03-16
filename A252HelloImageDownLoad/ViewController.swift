@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var theImageView: UIImageView!
     
     @IBOutlet weak var theImageContaner: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        if let url = URL(string: "https://cdn.hk01.com/di/media/images/dw/20200812/370289758980673536.jpeg/n9DPEMxK9oiurOikNCKS0vCbRRiCES0RUTjuFlE47hY?v=w640"){
@@ -51,9 +53,10 @@ class ViewController: UIViewController {
                 print(json["results"][0]["picture"]["large"].stringValue)
                 self.theImageView
                     .sd_setImage(with:URL(string: json["results"][0]["picture"]["large"].stringValue))
+                self.emailLabel.text = json["results"][0]["email"].stringValue
+                self.nameLabel.text = json["results"][0]["name"]["title"].stringValue + " " +
+                json["results"][0]["name"]["first"].stringValue + " " + json["results"][0]["name"]["last"].stringValue
             }
-            
-            
         }
         
     }
@@ -62,14 +65,14 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         theImageView.clipsToBounds = true
         theImageView.layer.cornerRadius = theImageView.bounds.width / 2
-        theImageView.layer.borderColor = UIColor.red.cgColor
+        theImageView.layer.borderColor = UIColor.black.cgColor
         theImageView.layer.borderWidth = 3
         
         theImageContaner.clipsToBounds = false
         theImageContaner.layer.cornerRadius = theImageContaner.bounds.width / 2
         theImageContaner.layer.shadowRadius = 20         //陰影
         theImageContaner.layer.shadowOpacity = 0.6;
-        theImageContaner.layer.shadowColor = UIColor.green.cgColor
+        theImageContaner.layer.shadowColor = UIColor.gray.cgColor
         theImageContaner.layer.shadowOffset = CGSize(width: 10, height: 10)
 
     }
